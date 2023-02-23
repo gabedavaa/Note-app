@@ -1,0 +1,27 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: monospace;
+  background-color: rgb(222, 222, 222);
+}
+
+.heading {
+  text-align: center;
+  font-size: 30px;
+  padding-top: 10px;
+}
+
+.info-text {
+  text-align: center;
+  font-size: 18px;
+}
+
+.app {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 300px);
+  gap: 40px;
+}

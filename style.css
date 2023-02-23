@@ -41,3 +41,36 @@ body {
   outline: none;
   background-color: #fff;
 }
+
+.note::placeholder {
+  font-size: 16px;
+  opacity: 40%;
+}
+
+.note:hover,
+.note:focus {
+  box-shadow: 0 0 10px rgb(0, 0, 0, 0.3);
+  transition: all 200ms ease;
+}
+
+.btn {
+  height: 200px;
+  border-color: rgba(252, 252, 252, 0.37);
+  background: rgba(252, 252, 252, 0.27);
+  border-radius: 15px;
+  cursor: pointer;
+  font-size: 60px;
+  color: rgb(0, 0, 0, 0.3);
+  font-weight: 900;
+}
+
+.btn:hover {
+  background: rgb(252, 252, 252, 0.5);
+  color: #fff;
+  transition: all 200ms ease;
+}
+
+.btn:active {
+  /* color: rgb(0, 0, 0, 0.3); */
+  /* transition: all 200ms ease; */
+}

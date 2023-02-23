@@ -69,8 +69,3 @@ body {
   color: #fff;
   transition: all 200ms ease;
 }
-
-.btn:active {
-  /* color: rgb(0, 0, 0, 0.3); */
-  /* transition: all 200ms ease; */
-}

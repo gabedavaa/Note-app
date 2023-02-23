@@ -4,7 +4,23 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
     <title>Note app</title>
+    <script defer src="./script.js"></script>
   </head>
-  <body></body>
+  <body>
+    <h1 class="heading">Note App</h1>
+    <p class="info-text">Double click on a note to remove</p>
+    <div class="app" id="app">
+      <textarea
+        placeholder="Empty Note"
+        name=""
+        id=""
+        class="note"
+        cols="30"
+        rows="10"
+      ></textarea>
+      <button class="btn" id="btn">+</button>
+    </div>
+  </body>
 </html>

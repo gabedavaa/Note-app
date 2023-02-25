@@ -30,10 +30,17 @@ function createNoteElement(id, content) {
 }
 
 function deleteNote(id, element) {
-  console.log(555);
+  const notes = getNotes().filter((note) => note.id !== id);
+  saveNote(notes);
+  appElement.removeChild(element);
 }
 
-function updateNote() {}
+function updateNote(id, content) {
+  const notes = getNotes();
+  const target = notes.filter((note) => note.id === id)[0];
+  target.content = content;
+  saveNote(notes);
+}
 
 function addNote() {
   const notes = getNotes();

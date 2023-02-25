@@ -2,6 +2,7 @@
 
 //////////////////////////////////
 const btnElement = document.getElementById("btn");
+const appElement = document.getElementById("app");
 
 function createNoteElement(id, content) {
   const element = document.createElement("textarea");
@@ -19,20 +20,28 @@ function createNoteElement(id, content) {
   element.addEventListener("input", () => {
     updateNote(id, element.value);
   });
+
+  return element;
 }
 
-function deleteNote() {
+function deleteNote(id, element) {
   console.log(555);
 }
 
 function updateNote() {}
 
 function addNote() {
+  const notes = [];
   const noteObject = {
     id: Math.floor(Math.random() * 100000),
     content: "",
   };
   const noteElement = createNoteElement(noteObject.id, noteObject.content);
+  appElement.insertBefore(noteElement, btnElement);
+
+  notes.push(noteObject);
+
+  saveNote(notes);
 }
 
 btnElement.addEventListener("click", addNote);

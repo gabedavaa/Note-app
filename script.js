@@ -4,6 +4,11 @@
 const btnElement = document.getElementById("btn");
 const appElement = document.getElementById("app");
 
+getNotes().forEach((note) => {
+  const noteElemet = createNoteElement(note.id, note.content);
+  appElement.insertBefore(noteElemet, btnElement);
+});
+
 function createNoteElement(id, content) {
   const element = document.createElement("textarea");
   element.classList.add("note");
@@ -31,7 +36,8 @@ function deleteNote(id, element) {
 function updateNote() {}
 
 function addNote() {
-  const notes = [];
+  const notes = getNotes();
+  console.log(notes);
   const noteObject = {
     id: Math.floor(Math.random() * 100000),
     content: "",
@@ -42,6 +48,14 @@ function addNote() {
   notes.push(noteObject);
 
   saveNote(notes);
+}
+
+function saveNote(notes) {
+  localStorage.setItem("note-app", JSON.stringify(notes));
+}
+
+function getNotes() {
+  return JSON.parse(localStorage.getItem("note-app") || "[]");
 }
 
 btnElement.addEventListener("click", addNote);
